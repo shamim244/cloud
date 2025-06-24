@@ -1,1 +1,18 @@
+name: Linux CLI Access
 
+on:
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  run-linux-cli:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print system info
+        run: |
+          echo "Linux CLI from GitHub Actions"
+          uname -a
+          lsb_release -a
+          df -h
+          free -m
+          top -bn1 | head -n 20
